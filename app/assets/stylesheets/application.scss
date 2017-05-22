@@ -1,3 +1,6 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+
 // Graphical variables
 @import "config/variables";
 @import "config/bootstrap_variables";
@@ -13,3 +16,7 @@
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
+
+h1, h2, h3 {
+  font-family: 'Montserrat', Open sans;
+}

@@ -1,12 +1,50 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-
-<%= link_to "créer un nouvelle utilisateur", new_user_registration_path  %>
-<br>
-<%= link_to "se connecter", new_user_session_path %>
-<br>
-<%= link_to "se déconnecter", destroy_user_session_path, method: :delete %>
-<br>
-<br>
- <%= link_to "creer une annonce",  new_flat_path  %>
+<div class="jumbotron">
+  <div class="banner">
+    <div class="banner-content">
+      <h1>Live in a dream</h1>
+      <p>The perfect home. The perfect place. For cheap.</p>
+      <div class="home-form">
+        <form action="#" class="form-inline" method='get'>
+          <input type="text" placeholder="Zipcode" name="zip" class="form-control input-lg">
+          <select placeholder="Category" name="category" class="form-control input-lg">
+            <option disabled selected value> Category </option>
+            <option>Flat</option>
+            <option>House</option>
+          </select>
+          <input type="text" placeholder="Min. Price" name="min_price" class="form-control input-lg">
+          <input type="text" placeholder="Max. Price" name="max_price" class="form-control input-lg">
+          <input type="submit" class="btn btn-danger btn-lg" value="Find Now">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="container">
+    <div class="flats">
+      <h2>Most recent flats</h2>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="flat">
+            Flat 1
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="flat">
+            Flat 2
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="flat">
+            Flat 3
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="flat">
+            Flat 4
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
