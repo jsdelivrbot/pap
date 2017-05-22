@@ -1,0 +1,10 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+
+<%= link_to "créer un nouvelle utilisateur", new_user_registration_path  %>
+<br>
+<%= link_to "se connecter", new_user_session_path %>
+<br>
+<%= link_to "se déconnecter", destroy_user_session_path, method: :delete %>
+

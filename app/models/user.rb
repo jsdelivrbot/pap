@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_many :flats
 
   validates :first_name, presence:true
-  validates :first_name, presence:true
+  # validates :Last_name, presence:true
 
 end
