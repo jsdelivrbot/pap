@@ -25,3 +25,8 @@
 .home-form select {
   padding-right: 20px;
 }
+
+select:required:invalid {
+  color: #999999;
+}
+

@@ -46,6 +46,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .sign-in a {
+    text-decoration: none;
+    margin-right: 20px;
+    color: #333333;
+  }
 }
 
 /* Navbar item */

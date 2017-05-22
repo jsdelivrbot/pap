@@ -13,24 +13,28 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Notification link-->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">
-      <div class="badge-container">
-        <i class="fa fa-envelope-o"></i>
-        <div class="badge badge-blue">3</div>
-      </div>
-    </a>
+    <% if user_signed_in? %>
+      <a href="" class="navbar-wagon-item navbar-wagon-link">
+        <div class="badge-container">
+          <i class="fa fa-envelope-o"></i>
+          <div class="badge badge-blue">3</div>
+        </div>
+      </a>
 
     <!-- Profile picture and dropdown -->
-    <% if user_signed_in? %>
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li><a href="#">Profile</a></li>
             <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Log Out</a></li>
+            <li><%= link_to 'Sign-out', destroy_user_session_path, method: :delete %></li>
           </ul>
         </div>
+      </div>
+    <% else %>
+      <div class="sign-in">
+        <%= link_to 'SIGN-IN', new_user_session_path %>
       </div>
     <% end %>
 
