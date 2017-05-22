@@ -8,7 +8,6 @@ end
 
 
 
-#
 gem 'rails', '~> 5.0.3'
 gem 'devise'
 
@@ -30,9 +29,6 @@ gem 'turbolinks', '~> 5'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'cloudinary', '~> 1.8', '>= 1.8.1'
 gem 'jbuilder', '~> 2.5'
-
-
-
 
 
 
