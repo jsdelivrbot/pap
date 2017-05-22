@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522124529) do
+ActiveRecord::Schema.define(version: 20170522144534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170522124529) do
     t.integer  "price",        null: false
     t.boolean  "availability"
     t.integer  "rooms",        null: false
-    t.string   "type",         null: false
+    t.string   "category",     null: false
     t.integer  "users_id",     null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
