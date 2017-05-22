@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170522152821) do
     t.integer  "price",        null: false
     t.boolean  "availability"
     t.integer  "rooms",        null: false
-    t.string   "type",         null: false
+    t.string   "category",     null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "user_id"

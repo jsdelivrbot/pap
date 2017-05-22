@@ -1,9 +1,22 @@
+<h1>Flats</h1>
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <% @flats.each do |flat| %>
+        <%= flat.title %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<%= @flats.each do |flat| %>
+<%= simple_form_for(@flat) do |f| %>
+  <%= f.error_notification %>
 
-  <%= flat.title %>
-  <%= flat.area %>
+  <%= f.input :area %>
+  <%= f.input :rooms %>
+  <%= f.input :zip %>
+  <%= f.input :price %>
 
-
+  <%= f.button :submit %>
 <% end %>
