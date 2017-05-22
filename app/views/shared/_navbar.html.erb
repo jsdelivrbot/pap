@@ -4,7 +4,7 @@
     <div class="main-logo">
       PAP
     </div>
-    <div class="tagline">
+    <div class="tagline hidden-xs">
       De propriétaire <br> à particulier
     </div>
   </div>
@@ -21,16 +21,18 @@
     </a>
 
     <!-- Profile picture and dropdown -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
-        </ul>
+    <% if user_signed_in? %>
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Log Out</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
+    <% end %>
 
     <!-- Button (call-to-action) -->
     <a href="" class="navbar-wagon-item navbar-wagon-button btn">Sell your home</a>

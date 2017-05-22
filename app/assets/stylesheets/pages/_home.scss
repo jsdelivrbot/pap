@@ -1,5 +1,6 @@
 .jumbotron {
   padding: 0;
+  margin-bottom: 0;
 }
 
 .jumbotron .banner {
@@ -9,6 +10,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   color: white;
+  padding: 0 10px;
+}
+
+.flats {
+  text-align: center;
+}
+
+.home-form input , select {
+  margin-bottom: 5px;
+}
+
+.home-form select {
+  padding-right: 20px;
 }
