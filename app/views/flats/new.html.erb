@@ -1,0 +1,23 @@
+<h1>Flats#new</h1>
+<p>Find me in app/views/flats/new.html.erb</p>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <%= simple_form_for(@flat) do |f|%>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :area %>
+      <%= f.input :address %>
+      <%= f.input :zip %>
+      <%= f.input :price %>
+      <%= f.input :availability %>
+      <%= f.input :rooms %>
+      <%= f.input :category %>
+
+      <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
