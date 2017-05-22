@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.3'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -6,14 +7,10 @@ git_source(:github) do |repo_name|
 end
 
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-plugin'
-end
-
-
 
 #
 gem 'rails', '~> 5.0.3'
+gem 'devise'
 
 gem 'pg', '~> 0.18'
 
