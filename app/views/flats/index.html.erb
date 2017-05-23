@@ -1,23 +1,16 @@
 <h1>Flats</h1>
 
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
+  <div class="col-xs-12 col-md-8">
+    <% if @flats.size == 0 %>
+      <div>
+        <p>T'es mauvais Jack</p>
+        <p>Mais retente ta chance via les filtres à droite<p>
+      </div>
+    <% else %>
       <% @flats.each do |flat| %>
         <%= flat.title %>; <%= flat.price %>; <%= flat.area %> <br>
       <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <form action="/flats" method="get">
-        <label for="area">Area: </label>
-        <input type="text" name="area" id="area">
-        <input type="submit">
-      </form>
-    </div>
+    <% end %>
   </div>
 </div>
