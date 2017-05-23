@@ -9,8 +9,16 @@
       </div>
     <% else %>
       <% @flats.each do |flat| %>
-        <%= flat.title %>; <%= flat.price %>; <%= flat.area %> <br>
+        <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('<%= photo_path_for(flat) %>')">
+          <p class="card-title"> <%= flat.title %> </p>
+        </div>
       <% end %>
     <% end %>
+  </div>
+  <div class="hidden-xs hidden-sm col-md-4" id="div_sidebar">
+    <div id="sidebar">
+      <%= render 'filter_sidebar' %>
+    </div>
   </div>
 </div>

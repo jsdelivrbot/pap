@@ -1,0 +1,30 @@
+.card {
+  background-size: cover !important;
+  height: 275px;
+  margin:15px auto;
+  position: relative;
+  :hover{
+  box-shadow: 1px 1px 2px #555;
+  }
+}
+
+  .card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .card-title{
+    position: absolute;
+    color:white;
+    font-size:20px;
+    left:10px;
+    bottom:10px;
+  }
+
+  .head-user{
+    margin: 50px;
+    font-size: 25px;
+  }
