@@ -3,8 +3,8 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <% @flatz.each do |flat| %>
-        <%= flat.title %>
+      <% @flats.each do |flat| %>
+        <%= flat.title %>; <%= flat.price %>; <%= flat.area %> <br>
       <% end %>
     </div>
   </div>

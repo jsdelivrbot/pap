@@ -1,9 +1,10 @@
 class FlatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_flat, only: [:show]
 
   def index
-    @flatz = Flat.all
-    # binding.pry
+    @flats = FlatFilter.new(params).filter
+    @flat = Flat.new
   end
 
   def show

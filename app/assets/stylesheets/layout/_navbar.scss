@@ -17,6 +17,10 @@
       margin-right: 20px;
       font-size: 40px;
       font-weight: bold;
+      a {
+        text-decoration: none;
+        color: #444444;
+      }
     }
     .tagline {
       font-weight: lighter;
@@ -25,15 +29,6 @@
       font-style: italic;
     }
   }
-}
-
-/* Optional class to fix the navbar on top */
-.navbar-wagon-fixed {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
-  width: 100%;
 }
 
 /* Navbar logo */
@@ -46,6 +41,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .sign-in a {
+    text-decoration: none;
+    margin-right: 20px;
+    color: #333333;
+  }
 }
 
 /* Navbar item */
@@ -79,40 +79,6 @@
   color: $green;
   background: white;
   border: 1px solid $green;
-}
-
-/* Navbar search form */
-.navbar-wagon-search {
-  flex: 0 1 300px;
-  display: flex;
-  justify-content: flex-end;
-  padding: 0 10px;
-  position: relative;
-}
-.navbar-wagon-search-btn {
-  line-height: 40px;
-  color: #E6E6E6;
-  border: none;
-  background: transparent;
-  position: absolute;
-  right: 14px;
-  top: -2px;
-  z-index: 1;
-}
-.navbar-wagon-search-input {
-  flex: 0 1 300px;
-  transition: all 0.15s ease;
-  line-height: 40px;
-  font-weight: lighter;
-  color: #666666;
-  border: 1px solid #E6E6E6;
-  border-radius: 5px;
-  padding: 0 10px;
-  font-size: 14px;
-  outline: none;
-}
-.navbar-wagon-search-input:focus  {
-  border: 1px solid #CCCCCC;
 }
 
 /* Navbar dropdown menu */

@@ -16,6 +16,7 @@ category = ["flat", "farm", "castle", "cavern"]
     availability: true,
     rooms: rooms.sample,
     category: category.sample,
-    user_id: 1
+    user_id: 1,
+    description: 'This is a description'
     )
 end

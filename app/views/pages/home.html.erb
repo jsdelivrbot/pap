@@ -4,10 +4,10 @@
       <h1>Live in a dream</h1>
       <p>The perfect home. The perfect place. For cheap.</p>
       <div class="home-form">
-        <form action="#" class="form-inline" method='get'>
+        <form action="flats/index" class="form-inline" method='get'>
           <input type="text" placeholder="Zipcode" name="zip" class="form-control input-lg">
-          <select placeholder="Category" name="category" class="form-control input-lg">
-            <option disabled selected value> Category </option>
+          <select required placeholder="Category" name="category" class="form-control input-lg">
+            <option value="" disabled selected >Category   </option>
             <option>Flat</option>
             <option>House</option>
           </select>
@@ -22,28 +22,23 @@
 <div class="wrapper">
   <div class="container">
     <div class="flats">
-      <h2>Most recent flats</h2>
+      <h2>Recently added flats</h2>
       <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="flat">
-            Flat 1
+        <% @flats.each do |flat| %>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="flat-card">
+              <%= link_to '#' do %>
+                <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('http://www.lemoniteur.fr/media/IMAGE/2011/08/26/IMAGE_20110826_15147196.jpg')">
+                </div>
+                <div class="card-body">
+                  <h3><%= flat.description %></h3>
+                  <p><%= flat.price %> €</p>
+                </div>
+              <% end %>
+            </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="flat">
-            Flat 2
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="flat">
-            Flat 3
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="flat">
-            Flat 4
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
