@@ -2,8 +2,8 @@ class FlatsController < ApplicationController
   before_action :find_flat, only: [:show]
 
   def index
-    @flats = Flat.where(area: params[:area], zip: params[:zip], price: params[:price])
-    @flat = Flat.new
+    @flatz = Flat.all
+    # binding.pry
   end
 
   def show
@@ -24,7 +24,6 @@ class FlatsController < ApplicationController
     end
   end
 
-
   private
 
   def flat_params
@@ -34,4 +33,5 @@ class FlatsController < ApplicationController
   def find_flat
     @flat = Flat.find(params[:id])
   end
+
 end
