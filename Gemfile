@@ -6,30 +6,25 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
-
-gem 'rails', '~> 5.0.3'
-gem 'devise'
-gem 'omniauth-facebook'
-
-gem 'pg', '~> 0.18'
-
-gem 'puma', '~> 3.0'
-
-gem 'sass-rails', '~> 5.0'
-
-gem 'uglifier', '>= 1.3.0'
-
-gem 'coffee-rails', '~> 4.2'
-gem "bootstrap-sass"
-gem "font-awesome-sass"
-gem "simple_form"
+gem 'attachinary', github: 'assembler/attachinary'
 gem "autoprefixer-rails"
-gem 'jquery-rails'
-gem 'turbolinks', '~> 5'
+gem "bootstrap-sass"
+gem 'cloudinary', '1.1.7'
+gem 'coffee-rails'
+gem 'devise'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
-gem 'cloudinary', '~> 1.8', '>= 1.8.1'
+gem "font-awesome-sass"
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
+gem 'jquery-fileupload-rails'
+gem 'pg', '~> 0.18'
+gem 'omniauth-facebook'
+gem 'puma', '~> 3.0'
+gem 'rails', '~> 5.0.3'
+gem 'sass-rails', '~> 5.0'
+gem "simple_form"
+gem 'turbolinks', '~> 5'
+gem 'uglifier', '>= 1.3.0'
 
 
 
