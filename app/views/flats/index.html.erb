@@ -1,25 +1,24 @@
 <h1>Flats</h1>
 
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-8">
+  <div class="col-xs-12 col-md-8">
+    <% if @flats.size == 0 %>
+      <div>
+        <p>T'es mauvais Jack</p>
+        <p>Mais retente ta chance via les filtres à droite<p>
+      </div>
+    <% else %>
       <% @flats.each do |flat| %>
         <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
         url('<%= photo_path_for(flat) %>')">
           <p class="card-title"> <%= flat.title %> </p>
         </div>
       <% end %>
-      <% if @flats.size == 0 %>
-        <div class="no_result">
-          No result to display
-        </div>
-      <% end %>
-      </div>
-    <div class="hidden-xs hidden-sm col-md-4" id="div_sidebar">
-      <div id="sidebar">
-        <%= render 'filter_sidebar' %>
-        </div>
+    <% end %>
+  </div>
+  <div class="hidden-xs hidden-sm col-md-4" id="div_sidebar">
+    <div id="sidebar">
+      <%= render 'filter_sidebar' %>
     </div>
-
   </div>
 </div>

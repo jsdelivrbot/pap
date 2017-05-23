@@ -1,0 +1,37 @@
+.wrapper-grey {
+  background-color: #F1F1F1;
+}
+
+.flat-page-pic {
+  height: 400px;
+  background-size: cover;
+  display: flex;
+  color: white;
+  align-items: center;
+  padding: 0 0 20px 20px;
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
+  position: relative;
+}
+
+.flat-price {
+  position: absolute;
+  bottom: -25px;
+  right: 24px;
+  padding: 10px 20px;
+  background-color: $red;
+  color: white;
+  font-size: 24px;
+  border-radius: 28px;
+}
+
+.flat-details {
+  background-color: white;
+  padding-left: 20px;
+}
+
+#map {
+  border-right: 1px solid #FBFBFB;
+}
