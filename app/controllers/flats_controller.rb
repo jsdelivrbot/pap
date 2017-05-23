@@ -1,8 +1,9 @@
 class FlatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_flat, only: [:show]
 
   def index
-    @flats = Flat.where(area: params[:area], zip: params[:zip], price: params[:price])
+    @flats = FlatFilter.new(params).filter
     @flat = Flat.new
   end
 
@@ -23,7 +24,6 @@ class FlatsController < ApplicationController
       render :new
     end
   end
-
 
   private
 
