@@ -1,6 +1,8 @@
 class Flat < ApplicationRecord
   belongs_to :user
 
+  has_attachment :photo
+
   validates :title, presence:true
   validates :area, presence:true, numericality: true
   validates :price, presence:true

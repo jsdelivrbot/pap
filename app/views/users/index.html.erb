@@ -1,0 +1,54 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <p> Bonjour <%= current_user.first_name %> </p>
+      <p> votre email <%= current_user.email %> </p>
+      <p> ton compte à été créer le </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="cards">
+      <% current_user.flats.each do |flat| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('<%= photo_path_for(flat) %>')">
+          <p class="card-title"> <%= flat.title %> </p>
+          <%= link_to '', flat_path(current_user.id), class: 'card-link' %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .card {
+    background-size: cover !important;
+    height: 275px;
+    margin:15px auto;
+    position: relative;
+  }
+
+  .card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .card-title{
+    position: absolute;
+    color:white;
+    font-size:20px;
+    left:10px;
+    bottom:10px;
+  }
+
+</style>
