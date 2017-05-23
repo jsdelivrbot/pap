@@ -3,20 +3,21 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <% @flats.each do |flat| %>
+      <% @flatz.each do |flat| %>
         <%= flat.title %>
       <% end %>
     </div>
   </div>
 </div>
 
-<%= simple_form_for(@flat) do |f| %>
-  <%= f.error_notification %>
-
-  <%= f.input :area %>
-  <%= f.input :rooms %>
-  <%= f.input :zip %>
-  <%= f.input :price %>
-
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form action="/flats" method="get">
+        <label for="area">Area: </label>
+        <input type="text" name="area" id="area">
+        <input type="submit">
+      </form>
+    </div>
+  </div>
+</div>
