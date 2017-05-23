@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :flats
 
   validates :first_name, presence:true
-  # validates :Last_name, presence:true
+  # validates :last_name, presence:true
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
