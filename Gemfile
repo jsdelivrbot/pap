@@ -10,6 +10,7 @@ end
 
 gem 'rails', '~> 5.0.3'
 gem 'devise'
+gem 'omniauth-facebook'
 
 gem 'pg', '~> 0.18'
 

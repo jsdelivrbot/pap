@@ -6,18 +6,29 @@
 
 <p> ton compte à été créer le </p>
 
-<div class="flats">
-  <% current_user.flats.each do |flat| %>
-    <div class="flat">
-      <p> <%= flat.title %> </p>
-      <p> <%= flat.description %> </p>
-      <p> <%= flat.area %> </p>
-      <p> <%= flat.address %> </p>
-      <p> <%= flat.zip %> </p>
-      <p> <%= flat.price %> </p>
-      <p> <%= flat.availability %> </p>
-      <p> <%= flat.rooms %> </p>
-      <p> <%= flat.category %> </p>
+<div class="container">
+  <div class="row">
+    <div class="cards">
+      <% current_user.flats.each do |flat| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <p> <%= flat.title %> </p>
+          <p> <%= flat.description %> </p>
+          <p> <%= flat.area %> </p>
+          <p> <%= flat.address %> </p>
+          <p> <%= flat.zip %> </p>
+          <p> <%= flat.price %> </p>
+          <p> <%= flat.availability %> </p>
+          <p> <%= flat.rooms %> </p>
+          <p> <%= flat.category %> </p>
+        </div>
+      </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
+<style>
+  .card{
+    background-color: red;
+  }
+</style>
