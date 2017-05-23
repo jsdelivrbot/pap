@@ -6,16 +6,15 @@
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
       <%= simple_form_for(@flat) do |f|%>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :area %>
-      <%= f.input :address %>
-      <%= f.input :zip %>
-      <%= f.input :price %>
-      <%= f.input :availability %>
-      <%= f.input :rooms %>
-      <%= f.input :category %>
-      <%= f.input :photo, as: :attachinary %>
+      <%= f.input :title, label: false, input_html: { :class => "input-form-session", placeholder:"title" } %>
+      <%= f.input :description, label: false, input_html: { :class => "input-form-session", placeholder:"description" } %>
+      <%= f.input :area, label: false, input_html: { :class => "input-form-session", placeholder:"area" } %>
+      <%= f.input :address, label: false, input_html: { :class => "input-form-session", placeholder:"address" } %>
+      <%= f.input :zip, label: false, input_html: { :class => "input-form-session", placeholder:"Zip code" } %>
+      <%= f.input :price, label: false, input_html: { :class => "input-form-session", placeholder:"price" } %>
+      <%= f.input :rooms, label: false, input_html: { :class => "input-form-session", placeholder:"rooms" } %>
+      <%= f.input :category, label: false, input_html: { :class => "input-form-session", placeholder:"category" } %>
+      <%= f.input :photo, as: :attachinary, label: false, input_html: { :class => "input-form-session", placeholder:"photo" } %>
 
       <%= f.button :submit %>
       <% end %>
