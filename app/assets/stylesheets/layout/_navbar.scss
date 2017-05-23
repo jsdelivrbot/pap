@@ -111,3 +111,13 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+#mobile_logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile {
+margin: 0 10px;
+}
