@@ -19,7 +19,7 @@
     </div>
   </div>
 </div>
-<div class="wrapper">
+<div class="wrapper bottom-padded">
   <div class="container">
     <div class="flats">
       <h2>Recently added flats</h2>
@@ -27,7 +27,7 @@
         <% @flats.each do |flat| %>
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="flat-card">
-              <%= link_to '#' do %>
+              <%= link_to flat_path(flat) do %>
                 <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
            url(<%= photo_path_for(flat) %>)">
                 </div>

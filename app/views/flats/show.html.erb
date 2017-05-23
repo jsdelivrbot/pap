@@ -1,14 +1,167 @@
+<div class="wrapper-grey">
+  <div class="container">
+    <div class="flat-page-pic" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= photo_path_for(@flat) %>)">
+      <div class="flat-page-title">
+        <h1><%= @flat.title %></h1>
+      </div>
+      <div class="flat-price"><%= number_with_delimiter(@flat.price, delimiter: " ", separator: ",") %>€</div>
+    </div>
+  </div>
+  <div class="container bottom-padded">
+    <div class="flat-details" style="height: 500px">
+      <div class="row">
+      <div class="col-xs-12 col-sm-4">
+          <div id="map" style="width: 100%; height: 500px;">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+          <div class="flat-description">
+            <%= @flat.description %>
+            <%= @flat.area %>
+            <%= @flat.rooms %>
+            <%= @flat.category %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
+<script type="text/javascript">
+var myLatlng = new google.maps.LatLng(48.8655909, 2.378983);
 
-<%= @flat.title %>
-<%= @flat.description %>
-<%= @flat.area %>
-<%= @flat.address %>
-<%= @flat.zip %>
-<%= @flat.price %>
-<%= @flat.availability %>
-<%= @flat.rooms %>
-<%= @flat.category %>
+var myOptions = {
+  zoom: 16,
+  center: myLatlng,
+  scrollwheel: false,
+  mapTypeId: google.maps.MapTypeId.ROADMAP,
+  styles: [
+  {
+      "featureType": "administrative",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "off"
+          }
+      ]
+  },
+  {
+      "featureType": "landscape",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "simplified"
+          },
+          {
+              "hue": "#0066ff"
+          },
+          {
+              "saturation": 74
+          },
+          {
+              "lightness": 100
+          }
+      ]
+  },
+  {
+      "featureType": "poi",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "simplified"
+          }
+      ]
+  },
+  {
+      "featureType": "road",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "simplified"
+          }
+      ]
+  },
+  {
+      "featureType": "road.highway",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "off"
+          },
+          {
+              "weight": 0.6
+          },
+          {
+              "saturation": -85
+          },
+          {
+              "lightness": 61
+          }
+      ]
+  },
+  {
+      "featureType": "road.highway",
+      "elementType": "geometry",
+      "stylers": [
+          {
+              "visibility": "on"
+          }
+      ]
+  },
+  {
+      "featureType": "road.arterial",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "off"
+          }
+      ]
+  },
+  {
+      "featureType": "road.local",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "on"
+          }
+      ]
+  },
+  {
+      "featureType": "transit",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "simplified"
+          }
+      ]
+  },
+  {
+      "featureType": "water",
+      "elementType": "all",
+      "stylers": [
+          {
+              "visibility": "simplified"
+          },
+          {
+              "color": "#5f94ff"
+          },
+          {
+              "lightness": 26
+          },
+          {
+              "gamma": 5.86
+          }
+      ]
+  }
+]
+};
 
-
+var map = new google.maps.Map(document.getElementById('map'), myOptions);
+var marker = new google.maps.Marker({
+  position: myLatlng,
+  map: map,
+  title: "You are here!"
+});
+</script>
