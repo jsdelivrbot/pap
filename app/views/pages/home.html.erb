@@ -29,7 +29,7 @@
             <div class="flat-card">
               <%= link_to '#' do %>
                 <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-           url('http://www.lemoniteur.fr/media/IMAGE/2011/08/26/IMAGE_20110826_15147196.jpg')">
+           url(<%= photo_path_for(flat) %>)">
                 </div>
                 <div class="card-body">
                   <h3><%= flat.description %></h3>
