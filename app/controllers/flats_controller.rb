@@ -28,7 +28,7 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:title, :description, :area, :address, :zip, :price, :availability, :rooms, :category)
+    params.require(:flat).permit(:title, :description, :area, :address, :zip, :price, :availability, :rooms, :category, :photo)
   end
 
   def find_flat

@@ -10,12 +10,12 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "vendor/index";
+@import "vendor/*";
 
 // Your CSS
-@import "layout/index";
-@import "components/index";
-@import "pages/index";
+@import "layout/*";
+@import "components/*";
+@import "pages/*";
 
 h1, h2, h3 {
   font-family: 'Montserrat', Open sans;
