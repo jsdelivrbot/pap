@@ -11,10 +11,8 @@
     <div class="cards">
       <% current_user.flats.each do |flat| %>
       <div class="col-xs-12 col-sm-4">
-<div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-         url('<%= cl_image_path cocktail.photo.path, height: 300, width: 400, crop: :fill %>')">
-
-
+        <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('<%= photo_path_for(flat) %>')">
           <p> <%= flat.title %> </p>
           <p> <%= flat.description %> </p>
           <p> <%= flat.area %> </p>
@@ -24,15 +22,9 @@
           <p> <%= flat.availability %> </p>
           <p> <%= flat.rooms %> </p>
           <p> <%= flat.category %> </p>
-          <p> <%= cl_image_tag("aeothafslmhfnrmvcqop", width: 400, height: 300, crop: :fill) %> </p>
         </div>
       </div>
       <% end %>
     </div>
   </div>
 </div>
-<style>
-  .card{
-    background-color: red;
-  }
-</style>
