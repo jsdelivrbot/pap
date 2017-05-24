@@ -72,3 +72,11 @@
 .thumbnail {
   height: 80px;
 }
+
+.thumbnail.active {
+  border: 1px solid $green;
+}
+
+.thumbnail:hover {
+  border: 1px solid $green;
+}
