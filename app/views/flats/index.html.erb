@@ -6,6 +6,7 @@
       <% if @flats.size == 0 %>
         <div class="no_result">
           <h2 class="h2-1">Nothing matches your search ...</h2>
+          <br>
           <h2 class="h2-2">What about a tent here ? </h2>
         </div>
       <% else %>
@@ -18,10 +19,12 @@
         <% end %>
       </div>
       <% end %>
-  </div>
-  <div class="hidden-xs hidden-sm col-md-4" id="div_sidebar">
-    <div id="sidebar">
-      <%= render 'flats/filter_sidebar' %>
+      <div class="oneflat hidden"></div>
+    </div>
+    <div class="hidden-xs hidden-sm col-md-4" id="div_sidebar">
+      <div id="sidebar">
+        <%= render 'flats/filter_sidebar' %>
+      </div>
     </div>
   </div>
 </div>

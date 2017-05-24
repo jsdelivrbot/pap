@@ -11,6 +11,7 @@
             <option value="farm">castle</option>
             <option value="farm">cavern</option>
             <option value="farm">farm</option>
+            <option value="house">flat</option>
             <option value="house">house</option>
           </select>
           <input required type="number" placeholder="Min. Price" name="min_price" class="form-control input-lg">
@@ -24,7 +25,7 @@
 <div class="wrapper bottom-padded">
   <div class="container">
     <div class="flats">
-      <h2>Recently added flats</h2>
+      <h2>Recently added places</h2>
       <div class="row">
         <% @flats.each do |flat| %>
           <div class="col-xs-12 col-sm-6 col-md-3">
@@ -34,7 +35,7 @@
            url(<%= photo_path_for(flat) %>)">
                 </div>
                 <div class="card-body">
-                  <h3><%= flat.description %></h3>
+                  <h3><%= flat.title %></h3>
                   <p><%= flat.price %> €</p>
                 </div>
               <% end %>

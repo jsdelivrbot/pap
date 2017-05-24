@@ -2,6 +2,30 @@
   background-color: #F1F1F1;
 }
 
+.flat-body {
+  background-color: white;
+  padding: 10px;
+  .flat-owner-contact {
+    margin: 35px 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #F1F1F1;
+    border-radius: 4px;
+    h4 {
+      margin-top: 0px;
+    }
+    textarea {
+      width:100%;
+      resize: none;
+      border-color: #F2F2F2;
+      border-radius: 3px;
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
 .flat-page-pic {
   height: 400px;
   background-size: cover;
@@ -12,6 +36,7 @@
   h1 {
     padding: 0;
     margin: 0;
+    color: white;
   }
   position: relative;
 }
@@ -34,4 +59,16 @@
 
 #map {
   border-right: 1px solid #FBFBFB;
+}
+
+#flat-data-desc {
+  margin-bottom: 20px;
+}
+
+#flat-data-details h4 {
+  margin-left: 15px;
+}
+
+.thumbnail {
+  height: 80px;
 }
