@@ -7,27 +7,56 @@
       <div class="flat-price"><%= number_with_delimiter(@flat.price, delimiter: " ", separator: ",") %>€</div>
     </div>
   </div>
-  <div class="container bottom-padded">
-    <div class="flat-details" style="height: 500px">
+  <div class="container">
+    <div class="flat-body" style="height: 500px">
       <div class="row">
-      <div class="col-xs-12 col-sm-4">
-          <div id="map" style="width: 100%; height: 500px;">
+        <div class="col-xs-12 col-sm-8">
+          <div class="flat-details">
+            <div id="flat-data-thumbnails">
+              <h4>Photos :</h4>
+              <ul class="list-inline">
+                <li><%= image_tag 'home_banner.jpeg', class: "thumbnail" %></li>
+                <li><%= image_tag 'home_banner.jpeg', class: "thumbnail" %></li>
+                <li><%= image_tag 'home_banner.jpeg', class: "thumbnail" %></li>
+              </ul>
+            </div>
+            <div id="flat-data-desc">
+              <h4>Description :</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At perferendis totam quisquam delectus natus tempora amet nobis corporis temporibus minima blanditiis impedit minus ipsa, porro ipsam. Ab velit eligendi dicta.</p>
+            </div>
+            <div class="row" id="flat-data-details">
+              <h4>Autres informations: </h4>
+              <div class="col-xs-12 col-sm-4">
+                <ul class="list-unstyled">
+                  <li>Surface : <strong><%= @flat.area %> m2</strong></li>
+                  <li>Rooms : <strong><%= @flat.rooms %></strong></li>
+                  <li>Caractéristique 1 : <strong>Info 1</strong></li>
+                  <li>Caractéristique 2 : <strong>Info 2</strong></li>
+                </ul>
+              </div>
+              <div class="col-xs-12 col-sm-4">
+                <ul class="list-unstyled">
+                  <li>Caractéristique 3 : <strong>Info 3</strong></li>
+                  <li>Caractéristique 4 : <strong>Info 4</strong></li>
+                  <li>Caractéristique 5 : <strong>Info 5</strong></li>
+                  <li>Caractéristique 6 : <strong>Info 6</strong></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-8">
-          <div class="flat-description">
-            <%= @flat.description %>
-            <%= @flat.area %>
-            <%= @flat.rooms %>
-            <%= @flat.category %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="flat-owner-contact">
+            <h4>Contactez le propriétaire</h4>
+            <form action="#">
+              <div class="form-group">
+                <textarea rows="10"></textarea>
+              </div>
+              <button class="btn btn-primary">Envoyer votre message</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
