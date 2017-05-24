@@ -1,2 +1,21 @@
 @import "home";
-@import "flats"
+@import "flats";
+
+.no_result {
+ height: 450px;
+ background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('steppe.jpeg');
+ margin-bottom: 20px;
+ color: white;
+ position: relative;
+
+ h2.h2-1 {
+  position: absolute;
+  top:10px;
+  left:10px;
+ }
+  h2.h2-2 {
+  position: absolute;
+  top:50px;
+  left:10px;
+ }
+}
