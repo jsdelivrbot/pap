@@ -1,5 +1,6 @@
-
-Flat.destroy_all
+Flat.all.each do |flat|
+  flat.destroy
+end
 
 
 zip = ["75001", "75002", "75003", "75004", "75005"]
