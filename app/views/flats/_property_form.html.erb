@@ -1,0 +1,14 @@
+
+<%= simple_form_for(@flat) do |f|%>
+  <%= f.input :title, label: false, input_html: { :class => "input-form-session", placeholder:"title" } %>
+  <%= f.input :description, label: false, input_html: { :class => "input-form-session", placeholder:"description" } %>
+  <%= f.input :area, label: false, input_html: { :class => "input-form-session", placeholder:"area" } %>
+  <%= f.input :address, label: false, input_html: { :class => "input-form-session", placeholder:"address" } %>
+  <%= f.input :zip, label: false, input_html: { :class => "input-form-session", placeholder:"Zip code" } %>
+  <%= f.input :price, label: false, input_html: { :class => "input-form-session", placeholder:"price" } %>
+  <%= f.input :rooms, label: false, input_html: { :class => "input-form-session", placeholder:"rooms" } %>
+  <%= f.input :category, label: false, collection: Flat::CHOICE_CATEGORY, input_html: { :class => "input-form-session", placeholder:"category" } %>
+  <%= f.input :photos, as: :attachinary, label: false ,input_html: { :class => "navbar-wagon-item navbar-wagon-button btn",  multiple: true} %>
+
+  <%= f.button :submit, :class=>"navbar-wagon-item navbar-wagon-button btn" %>
+<% end %>

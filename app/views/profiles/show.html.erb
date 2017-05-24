@@ -16,10 +16,16 @@
     <div class="cards">
       <% current_user.flats.each do |flat| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-        url('<%= photo_path_for(flat) %>')">
-          <p class="card-title"> <%= flat.title %> </p>
-          <%= link_to '', flat_path(flat.id), class: 'card-link' %>
+        <div class="card-wraper">
+          <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+          url('<%= photo_path_for(flat) %>')">
+            <p class="card-title"> <%= flat.title %> </p>
+            <%= link_to '', flat_path(flat.id), class: 'card-link' %>
+          </div>
+          <div class="card-flex">
+            <%= link_to "Delete", flat_path(flat), method: :delete, :class=>"navbar-wagon-item navbar-wagon-button btn" %>
+            <%= link_to "Edit", edit_flat_path(flat), :class=>"navbar-wagon-item navbar-wagon-button btn" %>
+          </div>
         </div>
       </div>
       <% end %>
