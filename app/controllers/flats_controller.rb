@@ -3,12 +3,12 @@ class FlatsController < ApplicationController
   before_action :find_flat, only: [:show]
 
   def index
-    @flats = FlatFilter.new(params).filter
+    @flats = FlatFilter.new(params).filter('69004', 1000)
+    # Optional parameter to methode filter(address, distance) => filter('69004', 20)
     @flat = Flat.new
 
     # GEOCODING
-    @flats_lat = Flat.where.not(latitude: nil, longitude: nil)
-    @hash = Gmaps4rails.build_markers(@flats_lat) do |flat, marker|
+    @hash = Gmaps4rails.build_markers(@flats) do |flat, marker|
       marker.lat flat.latitude
       marker.lng flat.longitude
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
