@@ -6,9 +6,10 @@
       <% if @flats.size == 0 %>
         <div class="no_result">
           <h2 class="h2-1">Nothing matches your search ...</h2>
+          <br>
           <h2 class="h2-2">What about a tent here ? </h2>
         </div>
-      <% else %>
+      <% elsif %>
         <% @flats.each do |flat| %>
           <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
           url('<%= photo_path_for(flat) %>')">
@@ -16,6 +17,7 @@
           </div>
         <% end %>
       <% end %>
+    <div class="oneflat hidden"></div>
   </div>
   <div class="hidden-xs hidden-sm col-md-4" id="div_sidebar">
     <div id="sidebar">
