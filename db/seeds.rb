@@ -1,4 +1,5 @@
 
+
 zip = ["75001", "75002", "75003", "75004", "75005"]
 title =["big flat", "small flat", "big house", "small house"]
 area =[80, 40, 30, 50, 100]
@@ -17,6 +18,13 @@ category = ["flat", "farm", "castle", "cavern"]
     rooms: rooms.sample,
     category: category.sample,
     user_id: 1,
-    description: 'This is a description'
     )
+end
+
+url = 'http://lorempixel.com/800/600/city/'
+
+Flat.all.each do |flat|
+  flat.photo_urls = ['http://lorempixel.com/800/600/city/','http://lorempixel.com/800/600/city/']
+  flat.save
+  puts "photo added"
 end
