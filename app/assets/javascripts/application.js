@@ -13,3 +13,17 @@ $(document).ready(function() {
   $('#div_sidebar').scrollToFixed({marginTop: 62});
 });
 
+// code below is used to display elements with checkboxes in select input
+
+var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
