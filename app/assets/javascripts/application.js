@@ -10,6 +10,6 @@
 
 $(document).ready(function() {
   // unless ()
-  $('#div_sidebar').scrollToFixed({marginTop: 62});
+  $('#div_sidebar').scrollToFixed({marginTop: 62, limit: $('footer').offset().top});
 });
 
