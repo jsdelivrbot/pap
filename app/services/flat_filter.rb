@@ -17,6 +17,7 @@ class FlatFilter
     filter_by_rooms
     filter_by_zip
     filter_by_availability
+    order_by_creation_date
 
     @flats
   end
@@ -57,5 +58,9 @@ class FlatFilter
 
   def filter_by_availability
     @flats = @flats.where(availability: true)
+  end
+
+  def order_by_creation_date
+    @flats = @flats.order(created_at: :desc)
   end
 end

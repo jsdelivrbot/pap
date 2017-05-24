@@ -32,8 +32,12 @@
         </div>
       </div>
     <% else %>
-      <div class="sign-in">
+      <div class="sign-btn">
         <%= link_to 'SIGN-IN', new_user_session_path %>
+      </div>
+      |
+      <div class="sign-btn">
+        <%= link_to 'SIGN-UP', new_user_registration_path %>
       </div>
     <% end %>
 
