@@ -14,7 +14,7 @@
       <%= f.input :price, label: false, input_html: { :class => "input-form-session", placeholder:"price" } %>
       <%= f.input :rooms, label: false, input_html: { :class => "input-form-session", placeholder:"rooms" } %>
       <%= f.input :category, label: false, input_html: { :class => "input-form-session", placeholder:"category" } %>
-      <%= f.input :photo, as: :attachinary, label: false, input_html: { :class => "input-form-session", placeholder:"photo" } %>
+      <%= f.input :photos, as: :attachinary, label: false, input_html: { :class => "btn btn-primary",  multiple: true} %>
 
       <%= f.button :submit %>
       <% end %>
