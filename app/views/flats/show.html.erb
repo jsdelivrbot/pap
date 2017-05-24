@@ -27,6 +27,14 @@
   </div>
 </div>
 
+<div class="affichage photos">
+  <% @flat.photos.each do |photo| %>
+   <%= cl_image_tag photo.path %>
+  <% end %>
+</div>
+
+
+
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 
 <script type="text/javascript">

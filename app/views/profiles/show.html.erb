@@ -19,7 +19,7 @@
         <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
         url('<%= photo_path_for(flat) %>')">
           <p class="card-title"> <%= flat.title %> </p>
-          <%= link_to '', flat_path(current_user.id), class: 'card-link' %>
+          <%= link_to '', flat_path(flat.id), class: 'card-link' %>
         </div>
       </div>
       <% end %>
