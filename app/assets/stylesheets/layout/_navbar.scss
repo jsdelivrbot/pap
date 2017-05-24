@@ -41,9 +41,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .sign-in a {
+  .sign-btn a {
     text-decoration: none;
-    margin-right: 20px;
+    margin: 0 10px;
     color: #333333;
   }
 }

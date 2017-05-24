@@ -26,6 +26,7 @@
   padding-right: 20px;
 }
 
+// this one is for formatting the select "placeholder" the same way inputs are formatted
 select:required:invalid {
   color: #999999;
 }
