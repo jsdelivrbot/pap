@@ -1,10 +1,8 @@
-<h1>Flats#new</h1>
-<p>Find me in app/views/flats/new.html.erb</p>
-
-
 <div class="container">
   <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="form-registration">
+    <div class="form-title">Add property </div>
       <%= simple_form_for(@flat) do |f|%>
       <%= f.input :title, label: false, input_html: { :class => "input-form-session", placeholder:"title" } %>
       <%= f.input :description, label: false, input_html: { :class => "input-form-session", placeholder:"description" } %>
@@ -13,11 +11,12 @@
       <%= f.input :zip, label: false, input_html: { :class => "input-form-session", placeholder:"Zip code" } %>
       <%= f.input :price, label: false, input_html: { :class => "input-form-session", placeholder:"price" } %>
       <%= f.input :rooms, label: false, input_html: { :class => "input-form-session", placeholder:"rooms" } %>
-      <%= f.input :category, label: false, input_html: { :class => "input-form-session", placeholder:"category" } %>
-      <%= f.input :photos, as: :attachinary, label: false, input_html: { :class => "btn btn-primary",  multiple: true} %>
+      <%= f.input :category, label: false, collection: Flat::CHOICE_CATEGORY, input_html: { :class => "input-form-session", placeholder:"category" } %>
+      <%= f.input :photos, as: :attachinary, label: false ,input_html: { :class => "navbar-wagon-item navbar-wagon-button btn",  multiple: true} %>
 
-      <%= f.button :submit %>
+      <%= f.button :submit, :class=>"navbar-wagon-item navbar-wagon-button btn" %>
       <% end %>
+    </div>
     </div>
   </div>
 </div>
