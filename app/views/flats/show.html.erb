@@ -15,9 +15,9 @@
             <div id="flat-data-thumbnai">
               <h4>Photos :</h4>
               <ul class="list-inline">
-                <li><%= image_tag 'home_banner.jpeg', class: "thumbnail" %></li>
-                <li><%= image_tag 'home_banner.jpeg', class: "thumbnail" %></li>
-                <li><%= image_tag 'home_banner.jpeg', class: "thumbnail" %></li>
+                <% @flat.photos.each do |photo| %>
+                <li><%= cl_image_tag photo.path, class: "thumbnail" %></li>
+                <% end %>
               </ul>
             </div>
             <div id="flat-data-desc">

@@ -1,4 +1,6 @@
 
+Flat.destroy_all
+
 
 zip = ["75001", "75002", "75003", "75004", "75005"]
 title =["big flat", "small flat", "big house", "small house"]
@@ -24,7 +26,10 @@ end
 url = 'http://lorempixel.com/800/600/city/'
 
 Flat.all.each do |flat|
-  flat.photo_urls = ['http://lorempixel.com/800/600/city/','http://lorempixel.com/800/600/city/']
+  ramdom = rand(100)
+  ramdomb = rand(100)
+
+  flat.photo_urls = ["http://lorempixel.com/800/600/city/?#{ramdom}","http://lorempixel.com/800/600/city/?#{ramdomb}"]
   flat.save
   puts "photo added"
 end
