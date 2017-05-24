@@ -11,6 +11,10 @@
 $(document).ready(function() {
   // unless ()
   $('#div_sidebar').scrollToFixed({marginTop: 10, limit: $('footer').offset().top});
+
+  if ($('.card').length == 1) {
+    $('.oneflat').removeClass("hidden")
+  }
 });
 
 // code below is used to display elements with checkboxes in select input
