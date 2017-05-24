@@ -1,3 +1,31 @@
+
+.card {
+  background-size: cover !important;
+  height: 275px;
+  margin:15px auto;
+  position: relative;
+}
+
+.relative {
+  position: relative;
+}
+  .card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .card-title{
+    position: absolute;
+    color:white;
+    font-size:20px;
+    left:10px;
+    bottom:10px;
+  }
+
+
 .flat-card {
   margin: 10px;
   background-color: white;
@@ -7,10 +35,6 @@
     text-decoration: none;
     color: black;
   }
-}
-
-.flat-card:hover {
-  transform: scale(1.01);
 }
 
 .card-header {
@@ -31,3 +55,25 @@
     font-weight: lighter;
   }
 }
+
+.card-wraper{
+
+  box-shadow: 1px 1px 2px #DDD;
+  transition: box-shadow 0.5s;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  &:hover{
+    box-shadow: 2px 2px 3px #BBB;
+  }
+}
+
+.card-flex{
+  display: flex;
+  justify-content:center;
+  align-items: flex-end;
+
+}
+
+
+
+

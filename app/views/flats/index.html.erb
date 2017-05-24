@@ -9,12 +9,14 @@
           <h2 class="h2-2">What about a tent here ? </h2>
         </div>
       <% else %>
+      <div class="relative">
         <% @flats.each do |flat| %>
           <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
           url('<%= photo_path_for(flat) %>')">
             <p class="card-title"> <%= flat.title %> </p>
-          </div>
+            <%= link_to '', flat_path(flat), class: 'card-link' %> </div>
         <% end %>
+      </div>
       <% end %>
   </div>
   <div class="hidden-xs hidden-sm col-md-4" id="div_sidebar">
