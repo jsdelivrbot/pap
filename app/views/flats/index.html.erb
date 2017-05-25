@@ -4,12 +4,13 @@
     <div class="col-xs-12 col-md-8">
       <% if @flats.size == 0 %>
         <div class="no_result">
-          <h2 class="h2-1">Nothing matches your search ...</h2>
+          <h3 class="h2-1">Nothing matches your search ...</h3>
           <br>
-          <h2 class="h2-2">What about a tent here ? </h2>
+          <h3 class="h2-2">What about a tent here ? </h3>
         </div>
       <% else %>
       <div class="relative">
+      <div id="map" style="width: 100%; height: 275px;"></div>
         <div id="filters-list">
           <% if @filters.size > 0 %>
             <% @filters.each do |filter, value| %>
@@ -38,7 +39,7 @@
 
 <div>
 <div class="container">
-  <div id="map" style="width: 100%; height: 600px;"></div>
+
 </div>
 
 <% content_for(:after_js) do %>
@@ -47,6 +48,10 @@
       var handler = Gmaps.build('Google');
       handler.buildMap({ internal: { id: 'map' } }, function() {
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        markers.forEach(function(marker){
+        marker.label = "Hello World!";
+        console.log(marker.title)
+        })
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
         if (markers.length == 0) {
