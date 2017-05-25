@@ -3,7 +3,9 @@ class FlatsController < ApplicationController
   before_action :find_flat, only: [:show, :edit, :update]
 
   def index
-    tmp = FlatFilter.new(params).filter('45.764043 4.835658999999964', 10)
+    @user = current_user
+    lat_ln_string = "#{@user.latitude} #{@user.longitude}"
+    tmp = FlatFilter.new(params).filter(lat_ln_string, 10)
     # Optional parameter to methode filter('address', distance) => filter('69004', 10) # 10 pour 10km around the target
     # Optional parameter to methode filter('latitude longitude', distance) => filter('69004', 10)
     @flat = Flat.new
