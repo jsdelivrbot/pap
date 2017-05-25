@@ -3,7 +3,7 @@ class FlatsController < ApplicationController
   before_action :find_flat, only: [:show]
 
   def index
-    @flats = FlatFilter.new(params).filter('45.764043 4.835658999999964', 10)
+    @flats = FlatFilter.new(params).filter('45.764043 4.835658999999964', 5000)
     # Optional parameter to methode filter('address', distance) => filter('69004', 10) # 10 pour 10km around the target
     # Optional parameter to methode filter('latitude longitude', distance) => filter('69004', 10)
 
@@ -52,7 +52,7 @@ class FlatsController < ApplicationController
   end
 
   def update
-    @edit = Flat.update(flat_params)
+    @edit = Flat.find(params[:id]).update(flat_params)
     redirect_to profile_path
   end
 
