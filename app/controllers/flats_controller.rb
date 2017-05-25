@@ -63,6 +63,11 @@ class FlatsController < ApplicationController
     redirect_to profile_path
   end
 
+  def send_email_to_owner
+    UserMailer.contact_flat_owner(@user)
+    puts "J'envoie un mail"
+  end
+
 
   private
 
