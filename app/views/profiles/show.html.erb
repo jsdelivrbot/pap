@@ -3,9 +3,10 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="head-user">
+      <%= current_user.current_sign_in_ip %>
         <p> Bonjour <%= current_user.first_name %> </p>
         <p> votre email <%= current_user.email %> </p>
-        <p> votre IP <%= current_user.current_sign_in_ip %> </p>
+        <p> votre Latitude <%= current_user.latitude %> </p>
       </div>
     </div>
   </div>
