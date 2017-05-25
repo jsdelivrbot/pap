@@ -2,37 +2,42 @@
 
   <div class="input-group input-decoration">
     <span class="input-group-addon" id="sizing-addon1">Title</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon1" name="title" id="title">
+    <input type="text" class="form-control" aria-describedby="sizing-addon1" name="title" id="title" value=<%= params[:title]%>>
   </div>
 
   <div class="input-group input-decoration">
     <span class="input-group-addon" id="sizing-addon2">Category</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="category" id="category">
+    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="category" id="category" value=<%= params[:category]%>>
   </div>
 
   <div class="input-group input-decoration">
     <span class="input-group-addon" id="sizing-addon2">Min area</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="min_area" id="min_area">
+    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="min_area" id="min_area" value=<%= params[:min_area]%>>
   </div>
 
    <div class="input-group input-decoration">
     <span class="input-group-addon" id="sizing-addon2">Max area</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="max_area" id="max_area">
+    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="max_area" id="max_area" value=<%= params[:max_area]%>>
   </div>
 
   <div class="input-group input-decoration">
     <span class="input-group-addon" id="sizing-addon2">Min price</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="min_price" id="min_price">
+    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="min_price" id="min_price" value=<%= params[:min_price]%>>
+  </div>
+
+  <div class="input-group input-decoration">
+    <span class="input-group-addon" id="sizing-addon2">Max price</span>
+    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="max_price" id="max_price" value=<%= params[:max_price]%>>
   </div>
 
   <div class="input-group input-decoration">
     <span class="input-group-addon" id="sizing-addon2">Rooms</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="rooms" id="rooms">
+    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="rooms" id="rooms" value=<%= params[:rooms]%>>
   </div>
 
   <div class="input-group input-decoration">
     <span class="input-group-addon" id="sizing-addon2">Zip</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="zip" id="zip">
+    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="zip" id="zip" value=<%= params[:zip]%>>
   </div>
 
   <div class="btn-group">

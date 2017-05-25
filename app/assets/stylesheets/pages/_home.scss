@@ -9,6 +9,7 @@
   height: 500px;
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   color: white;
   padding: 0 10px;
@@ -21,16 +22,6 @@
   text-align: center;
 }
 
-.home-form input , select {
-  margin-bottom: 5px;
+.flat-card:hover {
+  transform: scale(1.01);
 }
-
-.home-form select {
-  padding-right: 20px;
-}
-
-// this one is for formatting the select "placeholder" the same way inputs are formatted
-select:required:invalid {
-  color: #999999;
-}
-
