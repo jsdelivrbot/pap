@@ -5,20 +5,29 @@ class FlatFilter
     @params = params
   end
 
-  def filter
+  def filter (address = '', distance = 20)
     @flats = Flat.all
     @filters = {}
 
-    filter_by_title
-    filter_by_category
-    filter_by_price
-    filter_by_area
-    filter_by_rooms
-    filter_by_zip
-    filter_by_availability
-    order_by_creation_date
+    if  params[:title].present? || params[:category].present? || params[:min_price].present? ||
+        params[:max_price].present? || params[:min_area].present? || params[:max_area].present? ||
+        params[:rooms].present? || params[:zip].present?
+      filter_by_title
+      filter_by_category
+      filter_by_min_price
+      filter_by_max_price
+      filter_by_min_area
+      filter_by_max_area
+      filter_by_rooms
+      filter_by_zip
+      filter_by_availability
+      order_by_creation_date
+    else
+      filter_by_user_location(address, distance)
+    end
 
     {items: @flats, tags: @filters}
+
   end
 
   private
@@ -101,5 +110,9 @@ class FlatFilter
 
   def order_by_creation_date
     @flats = @flats.order(created_at: :desc)
+  end
+
+  def filter_by_user_location(address, distance)
+    @flats = Flat.near(address, distance).where.not(latitude: nil, longitude: nil)
   end
 end
