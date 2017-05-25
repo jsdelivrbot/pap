@@ -1,19 +1,21 @@
-
-Flat.destroy_all
+Flat.all.each do |flat|
+  flat.destroy
+end
 
 
 zip = ["75001", "75002", "75003", "75004", "75005"]
 title =["big flat", "small flat", "big house", "small house"]
 area =[80, 40, 30, 50, 100]
-price =[100, 200, 300, 400]
+price =[100100, 200100, 300100, 400100]
 rooms = [2,3,4,5]
 category = ["flat", "farm", "castle", "cavern"]
 
-10.times do |i|
+30.times do |i|
   puts "new flat"
   Flat.create!(
     title: title.sample,
     area:  area.sample,
+    address: Faker::Address.city
     zip: zip.sample,
     price: price.sample,
     availability: true,

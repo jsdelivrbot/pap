@@ -11,9 +11,12 @@ gem "autoprefixer-rails"
 gem "bootstrap-sass"
 gem 'cloudinary', '1.1.7'
 gem 'coffee-rails'
+gem "coffee-rails"
 gem 'devise'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem "font-awesome-sass"
+gem "geocoder"
+gem "gmaps4rails"
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'jquery-fileupload-rails'
@@ -30,6 +33,10 @@ gem 'geocoder'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-ScrollToFixed'
+end
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
 end
 
 group :development, :test do
