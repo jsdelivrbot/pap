@@ -1,3 +1,4 @@
+<% flats = current_user.flats.sort_by { |flat| flat[:updated_at]}.reverse %>
 
 <div class="container">
   <div class="row">
@@ -13,7 +14,7 @@
 <div class="container">
   <div class="row">
     <div class="cards">
-      <% current_user.flats.each do |flat| %>
+      <% flats.each do |flat| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card-wraper">
           <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
