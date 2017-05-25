@@ -41,19 +41,16 @@ source 'https://rails-assets.org' do
 end
 
 group :development, :test do
-
   gem 'byebug', platform: :mri
 end
 
 group :development do
-
-  gem 'web-console', '>= 3.3.0'
+  gem "letter_opener"
   gem 'listen', '~> 3.0.5'
   gem 'pry', '~> 0.10.4'
-
-
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console', '>= 3.3.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
