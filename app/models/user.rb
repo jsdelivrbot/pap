@@ -8,10 +8,8 @@ class User < ApplicationRecord
 
   has_many :flats
 
-  geocoded_by :current_sign_in_ip, :latitude => :lat, :longitude => :lon
-  after_initialize do
-    :geocode
-  end
+  geocoded_by :current_sign_in_ip
+  after_initialize :geocode
 
   validates :first_name, presence:true
   # validates :last_name, presence:true
