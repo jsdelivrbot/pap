@@ -4,17 +4,19 @@ class FlatsController < ApplicationController
 
   def index
     @user = current_user
-    if user_signed_in?
-      lat_ln_string = "#{@user.latitude} #{@user.longitude}"
-    else
-      lat_ln_string = "16.7713828, -3.0254891"
-    end
 
+    if user_signed_in?
+     lat_ln_string = "#{@user.latitude} #{@user.longitude}"
+     puts "je suis sign-in"
+    else
+     lat_ln_string = "16.7713828, -3.0254891"
+     puts "je suis pas sign-in"
+    end
     tmp = FlatFilter.new(params).filter(lat_ln_string, 1000000)
-    # Optional parameter to methode filter('address', distance) => filter('69004', 10) # 10 pour 10km around the target
-    # Optional parameter to methode filter('latitude longitude', distance) => filter('69004', 10)
+
     @flat = Flat.new
     @flats = tmp[:items]
+
     @filters = tmp[:tags]
 
     # GEOCODING
@@ -86,4 +88,6 @@ class FlatsController < ApplicationController
     @flat = Flat.find(params[:id])
   end
 end
+
+
 

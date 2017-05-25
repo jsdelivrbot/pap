@@ -29,6 +29,8 @@ gem "simple_form"
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-ScrollToFixed'
