@@ -6,7 +6,7 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require ScrollToFixed
-//= raquire geocoder
+//= require geocoder
 //= require underscore
 //= require gmaps/google
 //= require_tree .
