@@ -29,6 +29,7 @@
 .flat-page-pic {
   height: 400px;
   background-size: cover;
+  background-position: 50%;
   display: flex;
   color: white;
   align-items: center;
@@ -71,4 +72,12 @@
 
 .thumbnail {
   height: 80px;
+}
+
+.thumbnail.active {
+  border: 1px solid $green;
+}
+
+.thumbnail:hover {
+  border: 1px solid $green;
 }
