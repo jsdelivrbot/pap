@@ -1,6 +1,5 @@
-<h1>Flats</h1>
-
 <div class="container">
+  <h1>Our suggestions</h1>
   <div class="row">
     <div class="col-xs-12 col-md-8">
       <% if @flats.size == 0 %>
@@ -11,6 +10,13 @@
         </div>
       <% else %>
       <div class="relative">
+        <div id="filters-list">
+          <% if @filters.size > 0 %>
+            <% @filters.each do |filter, value| %>
+              <tag><%= filter.to_s.capitalize %> : <%= value %></tag>
+            <% end %>
+          <% end %>
+        </div>
         <% @flats.each do |flat| %>
           <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
           url('<%= photo_path_for(flat) %>')">

@@ -3,7 +3,9 @@ class FlatsController < ApplicationController
   before_action :find_flat, only: [:show]
 
   def index
-    @flats = FlatFilter.new(params).filter
+    tmp = FlatFilter.new(params).filter
+    @flats = tmp[:items]
+    @filters = tmp[:tags]
     @flat = Flat.new
   end
 
