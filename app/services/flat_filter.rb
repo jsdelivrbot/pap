@@ -9,9 +9,7 @@ class FlatFilter
     @flats = Flat.all
     @filters = {}
 
-    if  params[:title].present? || params[:category].present? || params[:min_price].present? ||
-        params[:max_price].present? || params[:min_area].present? || params[:max_area].present? ||
-        params[:rooms].present? || params[:zip].present?
+    if query_parameters?
       filter_by_title
       filter_by_category
       filter_by_min_price
@@ -114,5 +112,9 @@ class FlatFilter
 
   def filter_by_user_location(address, distance)
     @flats = Flat.near(address, distance).where.not(latitude: nil, longitude: nil)
+  end
+
+  def query_parameters?
+    @params.values().count - @params.values().count("") > 2 ? true : false
   end
 end

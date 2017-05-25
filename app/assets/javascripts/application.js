@@ -12,7 +12,6 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-  console.log("i'm here");
   // unless ()
   $('#div_sidebar').scrollToFixed({marginTop: 10, limit: $('footer').offset().top});
 
