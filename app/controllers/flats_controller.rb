@@ -52,7 +52,7 @@ class FlatsController < ApplicationController
   end
 
   def update
-    @edit = Flat.update(flat_params)
+    @edit = Flat.find(params[:id]).update(flat_params)
     redirect_to profile_path
   end
 
