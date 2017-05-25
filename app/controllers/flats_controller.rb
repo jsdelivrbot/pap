@@ -10,7 +10,7 @@ class FlatsController < ApplicationController
       lat_ln_string = "16.7713828, -3.0254891"
     end
 
-    tmp = FlatFilter.new(params).filter(lat_ln_string, 1000)
+    tmp = FlatFilter.new(params).filter(lat_ln_string, 1000000)
     # Optional parameter to methode filter('address', distance) => filter('69004', 10) # 10 pour 10km around the target
     # Optional parameter to methode filter('latitude longitude', distance) => filter('69004', 10)
     @flat = Flat.new
@@ -68,8 +68,11 @@ class FlatsController < ApplicationController
   end
 
   def send_email_to_owner
-    UserMailer.contact_flat_owner(@user)
-    puts "J'envoie un mail"
+    owner = Flat.find(params[:flat_id]).user
+    content = params[:mail_content]
+    UserMailer.contact_flat_owner(owner, content).deliver_now
+    flash[:notice] = "Email successfully sent"
+    redirect_to :back
   end
 
 
