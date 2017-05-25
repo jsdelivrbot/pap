@@ -19,7 +19,7 @@ category = ["flat", "farm", "castle", "cavern"]
     availability: true,
     rooms: rooms.sample,
     category: category.sample,
-    user_id: 3,
+    user_id: 1,
     )
 end
 
