@@ -4,8 +4,8 @@ class FlatsController < ApplicationController
 
   def index
     @flats = FlatFilter.new(params).filter('45.764043 4.835658999999964', 10)
-    # Optional parameter to methode filter('address', distance) => filter('69004', 20) # 20 pour 20km around the target
-    # Optional parameter to methode filter('latitude longitude', distance) => filter('69004', 20)
+    # Optional parameter to methode filter('address', distance) => filter('69004', 10) # 10 pour 10km around the target
+    # Optional parameter to methode filter('latitude longitude', distance) => filter('69004', 10)
 
     @flat = Flat.new
 
