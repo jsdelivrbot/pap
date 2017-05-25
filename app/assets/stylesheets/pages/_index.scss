@@ -13,15 +13,17 @@
  color: white;
  position: relative;
 
- h2.h2-1 {
+ .h2-1 {
   position: absolute;
   top:10px;
-  left:10px;
+  left:20px;
+  color: #DDD;
  }
-  h2.h2-2 {
+  .h2-2 {
   position: absolute;
-  top:50px;
-  left:10px;
+  top:100px;
+  left:20px;
+  color: #DDD;
  }
 }
 

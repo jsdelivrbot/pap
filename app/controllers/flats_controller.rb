@@ -4,13 +4,14 @@ class FlatsController < ApplicationController
 
   def index
     @user = current_user
-    lat_ln_string = "#{@user.latitude} #{@user.longitude}"
 
+    if user_signed_in?
+      lat_ln_string = "#{@user.latitude} #{@user.longitude}"
+    else
+      lat_ln_string = "16.7713828, -3.0254891"
+    end
 
-    # lat_ln_string = "21.1906747 -86.85191739999999"
-
-
-    tmp = FlatFilter.new(ActionController::Parameters.new(params)).filter(lat_ln_string, 1000000)
+    tmp = FlatFilter.new(params).filter(lat_ln_string, 1000000)
     # Optional parameter to methode filter('address', distance) => filter('69004', 10) # 10 pour 10km around the target
     # Optional parameter to methode filter('latitude longitude', distance) => filter('69004', 10)
     @flat = Flat.new
