@@ -6,6 +6,9 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require ScrollToFixed
+//= require geocoder
+//= require underscore
+//= require gmaps/google
 //= require_tree .
 
 $(document).ready(function() {
