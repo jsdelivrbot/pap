@@ -48,6 +48,7 @@ end
 group :development do
 
   gem 'web-console', '>= 3.3.0'
+  gem 'letter_opener', '~> 1.4', '>= 1.4.1'
   gem 'listen', '~> 3.0.5'
   gem 'pry', '~> 0.10.4'
 
