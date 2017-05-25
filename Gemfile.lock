@@ -264,7 +264,11 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-fileupload-rails
   jquery-rails
+<<<<<<< HEAD
+  letter_opener (~> 1.4, >= 1.4.1)
+=======
   letter_opener
+>>>>>>> master
   listen (~> 3.0.5)
   omniauth-facebook
   pg (~> 0.18)
