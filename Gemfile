@@ -13,6 +13,7 @@ gem 'cloudinary', '1.1.7'
 gem 'coffee-rails'
 gem "coffee-rails"
 gem 'devise'
+gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem "font-awesome-sass"
 gem "geocoder"
@@ -28,6 +29,7 @@ gem 'sass-rails', '~> 5.0'
 gem "simple_form"
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'geocoder'
 
 
 source 'https://rails-assets.org' do

@@ -3,21 +3,19 @@ Flat.all.each do |flat|
 end
 
 
-zip = ["75001", "75002", "75003", "75004", "75005"]
 title =["big flat", "small flat", "big house", "small house"]
-area =[80, 40, 30, 50, 100]
-price =[100100, 200100, 300100, 400100]
-rooms = [2,3,4,5]
+area = (10..500).to_a.sample.to_s
+rooms = [2,3,4,5,6,7]
 category = ["flat", "farm", "castle", "cavern"]
 
-30.times do |i|
+20.times do |i|
   puts "new flat"
   Flat.create!(
     title: title.sample,
-    area:  area.sample,
-    address: Faker::Address.city
-    zip: zip.sample,
-    price: price.sample,
+    area: (10..500).to_a.sample.to_s,
+    address: Faker::Address.city,
+    zip: Faker::Address.postcode,
+    price: (80000..500000).to_a.sample.to_s,
     availability: true,
     rooms: rooms.sample,
     category: category.sample,
@@ -31,7 +29,7 @@ Flat.all.each do |flat|
   ramdom = rand(100)
   ramdomb = rand(100)
 
-  flat.photo_urls = ["http://lorempixel.com/800/600/city/?#{ramdom}","http://lorempixel.com/800/600/city/?#{ramdomb}"]
+  flat.photo_urls = ["#{url}?#{ramdom}","#{url}?#{ramdomb}"]
   flat.save
   puts "photo added"
 end
