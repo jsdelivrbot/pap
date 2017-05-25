@@ -1,9 +1,11 @@
 class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :find_flat, only: [:show]
+  before_action :find_flat, only: [:show, :edit, :update]
 
   def index
-    tmp = FlatFilter.new(params).filter('45.764043 4.835658999999964', 10)
+    @user = current_user
+    lat_ln_string = "#{@user.latitude} #{@user.longitude}"
+    tmp = FlatFilter.new(params).filter(lat_ln_string, 10)
     # Optional parameter to methode filter('address', distance) => filter('69004', 10) # 10 pour 10km around the target
     # Optional parameter to methode filter('latitude longitude', distance) => filter('69004', 10)
     @flat = Flat.new
@@ -19,8 +21,6 @@ class FlatsController < ApplicationController
   end
 
   def show
-    @flat = Flat.find(params[:id])
-
     # GEOCODING
     @flats_lat = Flat.where(id:@flat)
     @hash = Gmaps4rails.build_markers(@flats_lat) do |flat, marker|
@@ -48,11 +48,10 @@ class FlatsController < ApplicationController
   end
 
   def edit
-    @flat = Flat.find(params[:id])
   end
 
   def update
-    @edit = Flat.find(params[:id]).update(flat_params)
+    @flat.update(flat_params)
     redirect_to profile_path
   end
 
