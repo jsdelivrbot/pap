@@ -21,7 +21,7 @@
                 </div>
                 <div class="card-body">
                   <h3><%= flat.title %></h3>
-                  <p><%= flat.price %> €</p>
+                  <p><%= number_with_delimiter(flat.price, delimiter: " ", separator: ",") %> €</p>
                 </div>
               <% end %>
             </div>
