@@ -23,7 +23,9 @@ Rails.application.routes.draw do
 
   mount Attachinary::Engine => "/attachinary"
 
-  resources :flats, only: [:index, :new, :create, :edit, :update, :destroy, :show, :index] do
+  resources :flats, only: [:index, :new, :create, :edit, :update, :destroy, :index]
+
+  resources :flats, only: [:show] do
     post 'send_email_to_owner', to: 'flats#send_email_to_owner'
   end
 

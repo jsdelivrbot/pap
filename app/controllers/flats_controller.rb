@@ -1,5 +1,5 @@
 class FlatsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :send_email_to_owner]
   before_action :find_flat, only: [:show, :edit, :update]
 
   def index
