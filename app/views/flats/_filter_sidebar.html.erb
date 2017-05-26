@@ -41,18 +41,19 @@
 
   <div class="form-group inline-filter-form">
     <label for="rooms">Rooms :</label>
-    <input type="number" name="rooms">
+    <input type="number" name="rooms" value=<%= @filters[:rooms] %>>
   </div>
   <hr>
 
   <div class="form-group inline-filter-form">
     <label for="zip">Zip :</label>
-    <input type="text" name="zip">
+    <input type="text" name="zip" value=<%= @filters[:zip] %>>
   </div>
 
-  <div>
+  <div class="filter-form-btn">
     <input type="submit" class="navbar-wagon-button btn" value="Search">
   </div>
 </form>
+
 
 
