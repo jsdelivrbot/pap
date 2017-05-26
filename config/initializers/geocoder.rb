@@ -21,6 +21,8 @@ Geocoder.configure(
   :units => :km,
   # units: :mi,                 # :km for kilometers or :mi for miles
   # distances: :linear          # :spherical or :linear
+  google: { api_key: ENV['MAP_ID'] }
+
 )
 
 
