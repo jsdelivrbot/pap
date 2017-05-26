@@ -1,7 +1,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
@@ -11,7 +10,7 @@
 //= require gmaps/google
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
   // unless ()
   $('#div_sidebar').scrollToFixed({limit: $('footer').offset().top});
 

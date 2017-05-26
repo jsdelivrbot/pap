@@ -8,7 +8,17 @@
   <%= f.input :price, label: false, input_html: { :class => "input-form-session", placeholder:"price" } %>
   <%= f.input :rooms, label: false, input_html: { :class => "input-form-session", placeholder:"rooms" } %>
   <%= f.input :category, label: false, collection: Flat::CHOICE_CATEGORY, input_html: { :class => "input-form-session", placeholder:"category" } %>
-  <%= f.input :photos, as: :attachinary, label: false ,input_html: { :class => "navbar-wagon-item navbar-wagon-button btn",  multiple: true} %>
+  <%= f.input(
+        :photos,
+        as: :attachinary,
+        display: false ,
+        type:"file",
+        label:"Upload photos",
+        label_html: { :class => "navbar-wagon-item navbar-wagon-button btn" },
+        multiple: true
+      )
+  %>
 
   <%= f.button :submit, :class=>"navbar-wagon-item navbar-wagon-button btn" %>
 <% end %>
+

@@ -5,9 +5,10 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.contact_flat_owner.subject
   #
-  def contact_flat_owner(owner)
+  def contact_flat_owner(owner, mail_content)
+    puts "J'essaie d'envoyer un mail"
     @receiver = owner
-
-    mail(to: @owner.email, subject: "Je souhaite avoir plus d'informations sur votre bien")
+    @content = mail_content
+    mail(to: owner.email, subject: "Je souhaite avoir plus d'informations sur votre bien")
   end
 end
