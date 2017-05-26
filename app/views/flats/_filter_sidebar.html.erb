@@ -1,41 +1,56 @@
 <form action="/flats" method="get">
 
-  <div>
-    <label for="category">Category</label>
-    <input type="text" name="category">
+  <div class="form-group">
+    <label for="category">Category :</label>
+    <div class="radio">
+      <label><input type="radio" name="category" value="castle">Castle</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="category" value="cavern">Cavern</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="category" value="farm">Farm</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="category" value="flat">Flat</label>
+    </div>
   </div>
+  <hr>
 
-  <div>
-    <label for="min_area">Min area</label>
-    <input type="number" name="min_area" id="min_area">
+  <div class="form-group">
+    <label>Area :</label>
+    <div class="subfilters">
+      <label class="subfilter" for="min_area">Min</label>
+      <input type="number" name="min_area" min="0">
+      <label class="subfilter" for="max_area">Max</label>
+      <input type="number" name="max_area" min="0">
+    </div>
   </div>
+  <hr>
 
-   <div>
-    <label for="max_area">Max area</label>
-    <input type="number" name="max_area">
+  <div class="form-group">
+    <label>Price :</label>
+    <div class="subfilters">
+      <label class="subfilter" for="min_price">Min</label>
+      <input type="number" name="min_price" min="0">
+      <label class="subfilter" for="max_price">Max</label>
+      <input type="number" name="max_price" min="0">
+    </div>
   </div>
+  <hr>
 
-  <div>
-    <label for="min_price">Min price</label>
-    <input type="number" name="min_price" >
-  </div>
-
-  <div>
-    <label for="max_price">Max price</label>
-    <input type="number" name="max_price" >
-  </div>
-
-  <div>
-    <label for="rooms">Rooms</label>
+  <div class="form-group inline-filter-form">
+    <label for="rooms">Rooms :</label>
     <input type="number" name="rooms">
   </div>
+  <hr>
 
-  <div>
-    <label for="zip">Zip</label>
+  <div class="form-group inline-filter-form">
+    <label for="zip">Zip :</label>
     <input type="text" name="zip">
   </div>
 
-  <div class="btn">
+  <div>
     <input type="submit" class="navbar-wagon-button btn" value="Search">
   </div>
 </form>
