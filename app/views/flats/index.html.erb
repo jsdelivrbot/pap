@@ -1,45 +1,70 @@
 <div class="container">
-  <h1>Our suggestions</h1>
   <div class="row">
-    <div class="col-xs-12 col-md-8">
-      <% if @flats.size == 0 %>
-        <div class="no_result">
-          <h3 class="h2-1">Nothing matches your search ...</h3>
-          <br>
-          <h3 class="h2-2">What about a tent here ? </h3>
-        </div>
-      <% else %>
-      <div class="relative">
-      <div id="map" style="width: 100%; height: 275px;"></div>
-        <div id="filters-list">
+    <div class="col-xs-12 col-md-3">
+      <div id="active-filters-list">
+        <h4>Current selection</h4>
+        <div class="active-filter-list-content hidden-xs">
           <% if @filters.size > 0 %>
-            <% @filters.each do |filter, value| %>
-              <tag><%= filter.to_s.capitalize %> : <%= value %></tag>
-            <% end %>
+            <ul class="list-unstyled">
+              <% @filters.each do |filter, value| %>
+                <li>
+                  <tag><%= filter.to_s.capitalize %> : <%= value %></tag>
+                </li>
+              <% end %>
+            </ul>
           <% end %>
         </div>
-        <% @flats.each do |flat| %>
-          <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-          url('<%= photo_path_for(flat) %>')">
-            <p class="card-title"> <%= flat.title %> </p>
-            <%= link_to '', flat_path(flat), class: 'card-link' %> </div>
-        <% end %>
       </div>
-      <% end %>
-      <div class="oneflat hidden"></div>
+      <div id="search-form">
+        <h4>Refine your search</h4>
+        <div class="filter-form hidden-xs">
+          <%= render 'flats/filter_sidebar' %>
+        </div>
+      </div>
     </div>
-    <div class="hidden-xs hidden-sm col-md-4" id="div_sidebar">
-      <div id="sidebar">
-        <%= render 'flats/filter_sidebar' %>
+    <div class="col-xs-12 col-md-9">
+      <div id="results-map">
+        <h4>Around you</h4>
+        <div class="gmap-content">
+          <div id="map" style="width: 100%; height: 300px; border-radius: 2px;">
+          </div>
+        </div>
+      </div>
+      <div id="results-list">
+        <h4>Our propositions</h4>
+        <% if @flats.size == 0 %>
+          <div class="no_result">
+            <h3 class="h2-1">Nothing matches your search ...</h3>
+            <br>
+            <h3 class="h2-2">What about a tent here ? </h3>
+          </div>
+        <% else %>
+          <div id="search-results">
+            <% @flats.each do |flat| %>
+              <div class="search-result">
+                <%= link_to flat_path(flat) do %>
+                  <div class = "search-result-pic" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url('<%= photo_path_for(flat) %>')">
+                  </div>
+                  <div class="search-result-body">
+                    <div class="search-result-info">
+                      <h3><%= flat.title %></h3>
+                      <p>Category : <%= flat.category %></p>
+                      <p>Area : <%= flat.area %> m²</p>
+                      <p>Rooms : <%= flat.rooms %></p>
+                    </div>
+                  </div>
+                  <div class="search-result-price">
+                    <%= number_with_delimiter(flat.price, delimiter: " ", separator: ",") %>€
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
-
-
-<div>
-<div class="container">
-
 </div>
 
 <% content_for(:after_js) do %>
@@ -63,5 +88,4 @@
     });
   <% end %>
 <% end %>
-</div>
 

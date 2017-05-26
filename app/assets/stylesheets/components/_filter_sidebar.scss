@@ -1,13 +1,40 @@
-#sidebar {
-  position: fixed;
+.filter-form {
+  margin-top: 10px;
+  label {
+    font-weight: normal;
+    display: block;
+    font-size: 14px;
+  }
+  input {
+    width: 60%;
+  }
 }
 
-.input-decoration {
-  margin-bottom: 20px;
-  margin-right: 25px;
+.subfilters {
+  label {
+    font-weight: lighter;
+    display: inline-block;
+    font-size: 12px;
+  }
+  input {
+    width: 30%;
+  }
 }
 
-.input-group-addon {
-    min-width: 100px;// if you want width please write here //
-    text-align:center;
+.inline-filter-form {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  margin-right: 40px;
+  label {
+    margin: auto 4px auto 0;
+  }
 }
+
+.filter-form-btn {
+  text-align: center;
+  input.navbar-wagon-button.btn {
+    margin: 0;
+  }
+}
+
