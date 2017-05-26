@@ -44,13 +44,14 @@ class FlatFilter
     end
   end
 
-  def filter_by_price
-      filter_by_min_price
-      filter_by_max_price
-      if params[:min_price].present? && params[:max_price].present?
-        @filters[:price] = "From #{params[:min_price]}€ to #{params[:max_price]}€"
-      end
-  end
+# works but filter tag is broken for tablet view. Will work on it later
+  # def filter_by_price
+  #     filter_by_min_price
+  #     filter_by_max_price
+  #     if params[:min_price].present? && params[:max_price].present?
+  #       @filters[:price] = "From #{params[:min_price]}€ to #{params[:max_price]}€"
+  #     end
+  # end
 
   def filter_by_min_price
     if params[:min_price].present?
@@ -112,6 +113,7 @@ class FlatFilter
 
   def filter_by_user_location(address, distance)
     @flats = Flat.near(address, distance).where.not(latitude: nil, longitude: nil)
+    @filters[:location] = "Close to you"
   end
 
   def query_parameters?
