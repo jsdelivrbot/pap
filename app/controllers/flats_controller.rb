@@ -25,10 +25,18 @@ class FlatsController < ApplicationController
 
     # GEOCODING
     @hash = Gmaps4rails.build_markers(@flats) do |flat, marker|
+      marker.infowindow render_to_string(:partial => "infowindow", :locals => { :flat => flat})
       marker.lat flat.latitude
       marker.lng flat.longitude
+      marker.title flat.title
+      # marker.picture({
+      #             :url   => "http://lorempixel.com/400/200/",
+      #             :width  => "32",
+      #             :height => "32"
+      #            })
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
+
   end
 
   def show

@@ -9,7 +9,6 @@
 //= require geocoder
 //= require underscore
 //= require gmaps/google
-//= require fullcalendar
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
