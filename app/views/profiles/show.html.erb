@@ -2,42 +2,29 @@
 
 <%= render 'shared/nav-profile' %>
 
-<div id="flats" class="">
+<div id="flats">
   <div class="container">
-    <% flats.each do |flat| %>
     <div class="row">
+      <% flats.each do |flat| %>
       <div class="card-wraper">
         <div class="card-flex-start">
-          <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-          url('<%= photo_path_for(flat) %>')">
-          <p class="card-title"> <%= flat.title %> </p>
-          <%= link_to '', flat_path(flat.id), class: 'card-link' %>
+          <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= photo_path_for(flat) %>')">
+            <p class="card-title"> <%= flat.title %> </p>
+            <%= link_to '', flat_path(flat.id), class: 'card-link' %>
+          </div>
+          <div>
+            <p> <%= flat.description %> </p>
+            <p> <%= flat.price %> </p>
+            <p> <%= flat.address %> </p>
+          </div>
         </div>
-        <div>
-          <p> <%= flat.description %> </p>
-          <p> <%= flat.price %> </p>
-          <p> <%= flat.address %> </p>
+        <div class="card-flex">
+          <%= link_to "Delete", flat_path(flat), method: :delete, :class=>"navbar-wagon-item navbar-wagon-button btn" %>
+          <%= link_to "Edit", edit_flat_path(flat), :class=>"navbar-wagon-item navbar-wagon-button btn" %>
         </div>
-
-
       </div>
-      <div class="card-flex">
-        <%= link_to "Delete", flat_path(flat), method: :delete, :class=>"navbar-wagon-item navbar-wagon-button btn" %>
-        <%= link_to "Edit", edit_flat_path(flat), :class=>"navbar-wagon-item navbar-wagon-button btn" %>
-      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
-</div>
-</div>
 
-
-<script>
-  $(function() {
-    $('#show').on("click", function() {
-      $('#flats').toggleClass('hidden');
-
-    });
-  });
-</script>
