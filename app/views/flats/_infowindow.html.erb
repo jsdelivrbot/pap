@@ -1,0 +1,15 @@
+<span class="inmaptitle"><strong><%= flat.title.capitalize %> </strong></span>
+<br>
+
+<div class="infowindowlink">
+  <%= link_to flat_path(flat) do  %>
+    <%= cl_image_tag flat.photos[0].path, class: "inmap" %>
+  <% end %>
+</div>
+<i>Price : <%= flat.price %> €</i>
+<br>
+<i>Area : <%= flat.area %> m2</i>
+<br>
+<i>Rooms : <%= flat.rooms %></i>
+
+

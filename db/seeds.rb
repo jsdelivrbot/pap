@@ -17,7 +17,7 @@ cities = %w(Paris Lyon Bordeaux Monaco Saint-Etienne Montlucon Nice Toulouse Cle
     availability: true,
     rooms: rooms.sample,
     category: category.sample,
-    user_id: 3,
+    user_id: 1,
   )
 end
 
