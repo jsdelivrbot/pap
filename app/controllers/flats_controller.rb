@@ -15,7 +15,9 @@ class FlatsController < ApplicationController
     # Optional parameter to methode filter('address', distance) => filter('69004', 10) # 10 pour 10km around the target
     # Optional parameter to methode filter('latitude longitude', distance) => filter('69004', 10)
 
-    tmp = FlatFilter.new(params).filter(request.ip, 500)
+    # request.ip
+
+    tmp = FlatFilter.new(params).filter("Lyon", 50)
 
     @flat = Flat.new
     @flats = tmp[:items]
