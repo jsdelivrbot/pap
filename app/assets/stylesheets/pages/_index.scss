@@ -1,6 +1,10 @@
 @import "home";
 @import "flats";
 
+.accordion {
+  transition: 0.4s;
+}
+
 .oneflat {
   height: 1px;
   margin-bottom: 250px;
