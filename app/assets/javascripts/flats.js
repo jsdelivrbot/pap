@@ -1,5 +1,5 @@
-$(document).on('turbolinks:load', function() {
-  $('.thumbnail').on('click', toggleActiveThumbnail);
+$(document).ready(function() {
+  $('body').on('click', '.thumbnail', toggleActiveThumbnail);
 });
 
 function toggleActiveThumbnail(event) {

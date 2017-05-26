@@ -3,16 +3,10 @@ class FlatsController < ApplicationController
   before_action :find_flat, only: [:show, :edit, :update]
 
   def index
-    @user = current_user
 
-    if user_signed_in?
-     lat_ln_string = "#{@user.latitude} #{@user.longitude}"
-     puts "je suis sign-in"
-    else
-     lat_ln_string = "16.7713828, -3.0254891"
-     puts "je suis pas sign-in"
-    end
-    tmp = FlatFilter.new(params).filter(lat_ln_string, 1000000)
+    # request.ip
+
+    tmp = FlatFilter.new(params).filter("Lyon", 50)
 
     @flat = Flat.new
     @flats = tmp[:items]

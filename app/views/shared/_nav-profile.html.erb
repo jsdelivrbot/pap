@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="nav-flex">
+
+      <div> Your profile </div>
+      <div id='<%= params[:controller] == 'profiles' ? 'active' : '' %>'> <%= link_to 'Visualiser vos biens', profile_path %>  </div>
+      <div id='<%= params[:controller] == 'flats' ? 'active' : '' %>'> <%= link_to 'Ajouter un bien', new_flat_path %>
+      </div>
+
+    </div>
+  </div>
+</div>
