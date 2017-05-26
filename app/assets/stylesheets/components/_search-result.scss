@@ -28,14 +28,14 @@
 
 .search-result-pic {
   height: 160px;
-  background-size: 100%;
+  background-size: cover;
   width: 240px;
   border-radius: 2px 0 0 2px;
   transition: all 0.2s ease-in-out;
 }
 
 .search-result:hover .search-result-pic {
-  background-size: 102%;
+  background-size: cover;
 }
 
 .search-result-body {
