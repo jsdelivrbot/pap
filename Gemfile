@@ -11,7 +11,6 @@ gem "autoprefixer-rails"
 gem "bootstrap-sass"
 gem 'cloudinary', '1.1.7'
 gem 'coffee-rails'
-gem "coffee-rails"
 gem 'devise'
 gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
@@ -29,7 +28,6 @@ gem 'sass-rails', '~> 5.0'
 gem "simple_form"
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-gem 'geocoder'
 
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
@@ -53,7 +51,6 @@ group :development do
   gem 'pry', '~> 0.10.4'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'web-console', '>= 3.3.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

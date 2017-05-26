@@ -1,0 +1,55 @@
+#search-results {
+  margin-top: 10px;
+}
+
+.search-result {
+  border-radius: 2px;
+  border: 1px solid #F0F0F0;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+  border: 1px solid #C0C0C0;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  h3 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  p {
+    font-weight: lighter;
+    color: grey;
+    margin-bottom: 2px;
+  }
+}
+
+.search-result-pic {
+  height: 160px;
+  background-size: 100%;
+  width: 240px;
+  border-radius: 2px 0 0 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-result:hover .search-result-pic {
+  background-size: 102%;
+}
+
+.search-result-body {
+  flex-grow: 1;
+  padding-left: 15px;
+}
+
+.search-result-price {
+  padding-right: 15px;
+  color: #1F1F1F;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.no_result {
+  margin-top: 10px;
+}

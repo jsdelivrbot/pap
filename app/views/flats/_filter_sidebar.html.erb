@@ -1,48 +1,59 @@
 <form action="/flats" method="get">
 
-  <div class="input-group input-decoration">
-    <span class="input-group-addon" id="sizing-addon1">Title</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon1" name="title" id="title" value=<%= params[:title]%>>
+  <div class="form-group">
+    <label for="category">Category :</label>
+    <div class="radio">
+      <label><input type="radio" name="category" value="castle">Castle</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="category" value="cavern">Cavern</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="category" value="farm">Farm</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="category" value="flat">Flat</label>
+    </div>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <label>Area :</label>
+    <div class="subfilters">
+      <label class="subfilter" for="min_area">Min</label>
+      <input type="number" name="min_area" min="0">
+      <label class="subfilter" for="max_area">Max</label>
+      <input type="number" name="max_area" min="0">
+    </div>
+  </div>
+  <hr>
+
+  <div class="form-group">
+    <label>Price :</label>
+    <div class="subfilters">
+      <label class="subfilter" for="min_price">Min</label>
+      <input type="number" name="min_price" min="0">
+      <label class="subfilter" for="max_price">Max</label>
+      <input type="number" name="max_price" min="0">
+    </div>
+  </div>
+  <hr>
+
+  <div class="form-group inline-filter-form">
+    <label for="rooms">Rooms :</label>
+    <input type="number" name="rooms" value=<%= @filters[:rooms] %>>
+  </div>
+  <hr>
+
+  <div class="form-group inline-filter-form">
+    <label for="zip">Zip :</label>
+    <input type="text" name="zip" value=<%= @filters[:zip] %>>
   </div>
 
-  <div class="input-group input-decoration">
-    <span class="input-group-addon" id="sizing-addon2">Category</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="category" id="category" value=<%= params[:category]%>>
-  </div>
-
-  <div class="input-group input-decoration">
-    <span class="input-group-addon" id="sizing-addon2">Min area</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="min_area" id="min_area" value=<%= params[:min_area]%>>
-  </div>
-
-   <div class="input-group input-decoration">
-    <span class="input-group-addon" id="sizing-addon2">Max area</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="max_area" id="max_area" value=<%= params[:max_area]%>>
-  </div>
-
-  <div class="input-group input-decoration">
-    <span class="input-group-addon" id="sizing-addon2">Min price</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="min_price" id="min_price" value=<%= params[:min_price]%>>
-  </div>
-
-  <div class="input-group input-decoration">
-    <span class="input-group-addon" id="sizing-addon2">Max price</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="max_price" id="max_price" value=<%= params[:max_price]%>>
-  </div>
-
-  <div class="input-group input-decoration">
-    <span class="input-group-addon" id="sizing-addon2">Rooms</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="rooms" id="rooms" value=<%= params[:rooms]%>>
-  </div>
-
-  <div class="input-group input-decoration">
-    <span class="input-group-addon" id="sizing-addon2">Zip</span>
-    <input type="text" class="form-control" aria-describedby="sizing-addon2" name="zip" id="zip" value=<%= params[:zip]%>>
-  </div>
-
-  <div class="btn-group">
+  <div class="filter-form-btn">
     <input type="submit" class="navbar-wagon-button btn" value="Search">
   </div>
 </form>
+
 
 

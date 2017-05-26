@@ -12,7 +12,7 @@
 //= require fullcalendar
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
   // unless ()
   $('#div_sidebar').scrollToFixed({limit: $('footer').offset().top});
 
